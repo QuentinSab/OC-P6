@@ -4,39 +4,71 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>JustStreamIt</title>
+        <link href="../css/style.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300" rel="stylesheet">
     </head>
     <body>
         <header>
-            <img src="#" alt="Logo JustStreamIt">
-            <h1>Vidéos à la demande</h1>
+            <img class="logo" src="../img/logo_juststreamit.png" alt="Logo JustStreamIt">
+            <h1 class="header-title">Vidéos à la demande</h1>
         </header>
         
-        <main>
+        <main class="main">
             <section id="meilleur-film">
                 <h2>Meilleur film</h2>
-                <article>
-                    <img src="#" alt="Affiche du meilleur film">
-                    <h3>Titre du film</h3>
-                    <button>Détails</button>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <article class="article-bordered">
+                    <img class="best-movie-poster" src="https://picsum.photos/400/600" alt="Affiche du meilleur film">
+                    <div class="best-movie-div">
+                        <h3>Titre du film</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <button class="button-details button-best-movie">Détails</button>
+                    </div>
                 </article>
             </section>
             
             <section id="films-mieux-notes">
                 <h2>Films les mieux notés</h2>
-                <div>
+                <div class="grid-movies">
                     <article>
-                        <img src="#" alt="Affiche du film 1">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 1">
                         <div>
                             <h3>Titre du film 1</h3>
-                            <button>Détails</button>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                     <article>
-                        <img src="#" alt="Affiche du film 2">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
                         <div>
                             <h3>Titre du film 2</h3>
-                            <button>Détails</button>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                 </div>
@@ -44,19 +76,47 @@
             
             <section id="categorie-1">
                 <h2>Catégorie 1</h2>
-                <div>
+                <div class="grid-movies">
                     <article>
-                        <img src="#" alt="Affiche du film 3">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 1">
                         <div>
-                            <h3>Titre du film 3</h3>
-                            <button>Détails</button>
+                            <h3>Titre du film 1</h3>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                     <article>
-                        <img src="#" alt="Affiche du film 4">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
                         <div>
-                            <h3>Titre du film 4</h3>
-                            <button>Détails</button>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                 </div>
@@ -64,72 +124,193 @@
             
             <section id="categorie-2">
                 <h2>Catégorie 2</h2>
-                <div>
+                <div class="grid-movies">
                     <article>
-                        <img src="#" alt="Affiche du film 5">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 1">
                         <div>
-                            <h3>Titre du film 5</h3>
-                            <button>Détails</button>
+                            <h3>Titre du film 1</h3>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                     <article>
-                        <img src="#" alt="Affiche du film 6">
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
                         <div>
-                            <h3>Titre du film 6</h3>
-                            <button>Détails</button>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
                         </div>
                     </article>
                 </div>
             </section>
             
-            <section id="autres-categories">
-                <h2>Autres catégories</h2>
-                <select id="categories">
+            <section id="autres-categories-1">
+                <h2 class="title-others">Autres :</h2>
+                <select class="select-categories" id="categories-1">
                     <option value="categorie A">Catégorie A</option>
                     <option value="categorie B">Catégorie B</option>
                     <option value="categorie C">Catégorie C</option>
                 </select>
-                <article>
-                    <img src="#" alt="Affiche du film 7">
-                    <div>
-                        <h3>Titre du film 7</h3>
-                        <button>Détails</button>
-                    </div>
-                </article>
-                <article>
-                    <img src="#" alt="Affiche du film 8">
-                    <div>
-                        <h3>Titre du film 8</h3>
-                        <button>Détails</button>
-                    </div>
-                </article>
+                <div class="grid-movies">
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 1">
+                        <div>
+                            <h3>Titre du film 1</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="autres-categories-2">
+                <h2 class="title-others">Autres :</h2>
+                <select class="select-categories" id="categories-2">
+                    <option value="categorie A">Catégorie A</option>
+                    <option value="categorie B">Catégorie B</option>
+                    <option value="categorie C">Catégorie C</option>
+                </select>
+                <div class="grid-movies">
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 1">
+                        <div>
+                            <h3>Titre du film 1</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="https://picsum.photos/400/600" alt="Affiche du film 2">
+                        <div>
+                            <h3>Titre du film 2</h3>
+                            <button class="button-details">Détails</button>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
 
-        <dialog id="modale-film">
-            <div>
-                <section id="modale-details">
-                    <h2 id="modale-titre">Titre du film</h2>
-                    <p>
-                        <span id="modale-date">1963</span>
-                        <span id="modale-genres">Genre1, Genre2</span>
-                    </p>
-                    <p>
-                        <span id="modale-pegi">18+</span>
-                        <span id="modale-duree">118 minutes</span>
-                        <span id="modale-pays">(USA / UK)</span>
-                    </p>
-                    <p>IMDB score : <span id="modale-score">7/10</span></p>
-                    <p>Recettes au box-office : <span id="modale-boxoffice">$XXXM</span></p>
-                </section>
-                <div>
-                    <img id="modale-affiche" src="#" alt="Affiche du film">
+        <dialog class="modale-film" id="modale-film">
+            <div class="modale-contenu">
+                <div class="modale-header">
+                    <div class="modale-header-text">
+                        <div id="modale-details">
+                            <h2 id="modale-titre">Titre du film</h2>
+                            <p>
+                                <span id="modale-date">1963</span>
+                                <span id="modale-genres">Genre1, Genre2</span>
+                            </p>
+                            <p>
+                                <span id="modale-pegi">18+</span>
+                                <span id="modale-duree">118 minutes</span>
+                                <span id="modale-pays">(USA / UK)</span>
+                            </p>
+                            <p>IMDB score : <span id="modale-score">7/10</span></p>
+                            <p>Recettes au box-office : <span id="modale-boxoffice">$XXXM</span></p>
+                        </div>
+                        <div>
+                            <p>Réalisé par :</p>
+                            <p>Nom du réalisateur</p>
+                        </div>
+                    </div>
+                    <div class="modale-div-affiche">
+                        <img class="modale-affiche" id="modale-affiche" src="https://picsum.photos/400/600" alt="Affiche du film">
+                    </div>
                 </div>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Avec :</p>
+                <p>Acteur 1, Acteur 2, Acteur 3</p>
+                <button class="modale-fermer" id="modale-fermer">Fermer</button>
             </div>
-            <p>Réalisé par : <span id="modale-realisateur">Nom du réalisateur</span></p>
-            <p id="modale-resume">Résumé du film...</p>
-            <p>Avec : <span id="modale-acteurs">Acteur1, Acteur2, Acteur3</span></p>
-            <button id="modale-fermer">Fermer</button>
         </dialog>
+        <a href="#modale-film" class="open-modal">Ouvrir la modale</a>
     </body>
 </html>
