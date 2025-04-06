@@ -1,28 +1,20 @@
-const api_url = "http://localhost:8000/api/v1/";
+document.addEventListener("DOMContentLoaded", async function () {
+    const best_movies_data = await get_movies(best_movies_url, 7);
+    const best_movie_data = await get_movie_details(best_movies_data.shift());
+    create_movie_section("main", "films-mieux-notes", "Films les mieux notés");
+    display_best_movie(best_movie_data);
+    display_movies("#films-mieux-notes .grid-movies", best_movies_data);
 
-const best_movies_query = "titles/?sort_by=-imdb_score";
-const genre_list_query = "genres/";
+    const category1_movies = await get_movies(category1_movies_url, 6)
+    create_movie_section("main", "categorie-1", category1);
+    display_movies("#categorie-1 .grid-movies", category1_movies)
 
-document.addEventListener("DOMContentLoaded", function () {
+    const category2_movies = await get_movies(category2_movies_url, 6)
+    create_movie_section("main", "categorie-2", category2);
+    display_movies("#categorie-2 .grid-movies", category2_movies)
 
-    fetch(api_url + best_movies_query)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erreur HTTP : " + response.status);
-            }
-            return response.json();
-        })
-
-        .then(data => {
-            let h3 = document.querySelector(".best-movie-div h3");
-            h3.textContent = data.results[0].title;
-
-            let best_movie_image = document.getElementById("best-movie-poster");
-            best_movie_image.setAttribute("src", data.results[0].image_url);
-        })
-
-        .catch(error => {
-            console.error('Erreur :', error);
-        });
-
+    const genres_list = await get_genres(genres_list_url)
+    create_movie_section("main", "autre-categorie", "Autres :");
+    create_category_select("autre-categorie");
+    display_category_option("#select-categories", genres_list);
 });

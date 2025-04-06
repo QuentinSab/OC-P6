@@ -54,6 +54,7 @@ section h2{
 .best-movie-div{
     display: flex;
     flex-direction: column;
+    width: 100%
 }
 
 .button-details{
