@@ -1,6 +1,6 @@
 const api_url = "http://localhost:8000/api/v1/";
 
-const category1 = "Action";
+const category1 = "Fantasy";
 const category2 = "Romance";
 
 const best_movies_url = api_url + "titles/?sort_by=-imdb_score";

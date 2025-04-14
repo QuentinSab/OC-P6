@@ -17,4 +17,23 @@ document.addEventListener("DOMContentLoaded", async function () {
     create_movie_section("main", "autre-categorie", "Autres :");
     create_category_select("autre-categorie");
     display_category_option("#select-categories", genres_list);
+    
+    document.querySelectorAll('.button-see-more').forEach(button => {
+        const section = button.closest('section');
+        const articles = section.querySelectorAll('.grid-movies article');
+        let expanded = false;
+    
+        update_articles_display(button, articles, expanded);
+    
+        button.addEventListener('click', () => {
+            expanded = !expanded;
+            update_articles_display(button, articles, expanded);
+        });
+    
+        window.addEventListener('resize', () => {
+            if (!expanded) {
+                update_articles_display(button, articles, expanded);
+            }
+        });
+    });
 });

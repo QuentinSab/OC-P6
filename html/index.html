@@ -7,7 +7,9 @@
         <link href="../css/style.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300" rel="stylesheet">
         <script src="../js/config.js"></script>
-        <script src="../js/functions.js"></script>
+        <script src="../js/dynamic.js"></script>
+        <script src="../js/api.js"></script>
+        <script src="../js/dom.js"></script>
         <script src="../js/script.js"></script>
     </head>
     <body>
@@ -18,21 +20,22 @@
         
         <main class="main">
             <section id="meilleur-film">
-                <h2>Meilleur film</h2>
+                <h2 class="section-title">Meilleur film</h2>
                 <article class="article-bordered">
                     <img id="best-movie-poster" src="" alt="Affiche du meilleur film">
                     <div class="best-movie-div">
                         <h3></h3>
                         <p></p>
-                        <button class="button-details button-best-movie">Détails</button>
+                        <button class="button-style button-best-movie" value="">Détails</button>
                     </div>
                 </article>
             </section>
             
             <template id="section-movie-template">
                 <section id="">
-                    <h2></h2>
+                    <h2  class="section-title"></h2>
                     <div class="grid-movies"></div>
+                    <button class="button-style button-see-more">Voir plus</button>
                 </section>
             </template>
 
@@ -41,7 +44,7 @@
                     <img src="" alt="">
                     <div>
                         <h3></h3>
-                        <button class="button-details">
+                        <button class="button-style button-details">
                             Détails
                         </button>
                     </div>
@@ -56,7 +59,6 @@
             <template id="option-category-template">
                 <option value=""></option>
             </template>
-
         </main>
 
         <dialog class="modale-film" id="modale-film">
