@@ -8,20 +8,18 @@ function create_movie_section(container, id, title) {
     document.querySelector(container).appendChild(clone);
 }
 
-function create_movie_article(container, title, src, alt) {
+function create_movie_article(container, title, src, id) {
     const template = document.getElementById("article-movie-template");
     const clone = template.content.cloneNode(true);
 
     const img = clone.querySelector("img");
     img.src = src;
-    img.alt = alt;
+    img.alt = title;
 
-    img.onerror = function () {
-        this.onerror = null;
-        this.src = "../img/default-image.png";
-    };
+    img.onerror = default_image_error;
 
     clone.querySelector("h3").textContent = title;
+    clone.querySelector("button").dataset.id = id;
 
     document.querySelector(container).appendChild(clone);
 }
@@ -50,7 +48,7 @@ function create_category_option(container, name) {
 
 function display_movies(selector, movies_data) {
     for (let movie of movies_data) {
-        create_movie_article(selector, movie.title, movie.image_url, movie.title);
+        create_movie_article(selector, movie.title, movie.image_url, movie.id);
     }
 }
 
@@ -64,4 +62,37 @@ function display_best_movie(best_movie_data) {
     document.querySelector(".best-movie-div h3").textContent = best_movie_data.title;
     document.getElementById("best-movie-poster").setAttribute("src", best_movie_data.image_url);
     document.querySelector(".best-movie-div p").textContent = best_movie_data.long_description;
+    document.querySelector(".button-best-movie").dataset.id = best_movie_data.id;
+}
+
+async function display_modale_details(button) {
+    const movie = await get_movie_details(button.dataset.id);
+
+    const champs = [
+        ["modale-titre", "title"],
+        ["modale-date", "date_published"],
+        ["modale-genres", "genres"],
+        ["modale-pegi", "rated"],
+        ["modale-duree", "duration"],
+        ["modale-pays", "countries"],
+        ["modale-score", "imdb_score"],
+        ["modale-boxoffice", "worldwide_gross_income"],
+        ["modale-realisateur", "directors"],
+        ["modale-resume", "long_description"],
+        ["modale-actors", "actors"]
+    ];
+
+    champs.forEach(([id, key]) => {
+        const element = document.getElementById(id);
+        if (element) element.textContent = movie[key];
+    });
+
+    const image = document.getElementById("modale-affiche");
+    image.src = movie.image_url;
+    image.onerror = default_image_error;
+}
+
+function default_image_error(error) {
+    error.target.onerror = null;
+    error.target.src = "../img/default-image.png";
 }

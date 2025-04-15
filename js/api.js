@@ -48,8 +48,8 @@ function add_genres(genres, data) {
     return genres;
 }
 
-function get_movie_details(movie_data) {
-    const movie_url = api_url + "titles/" + movie_data.id;
+function get_movie_details(id) {
+    const movie_url = api_url + "titles/" + id;
     return get_page(movie_url)
 }
 

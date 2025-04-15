@@ -12,6 +12,7 @@
         <script src="../js/dom.js"></script>
         <script src="../js/script.js"></script>
     </head>
+
     <body>
         <header>
             <img class="logo" src="../img/logo_juststreamit.png" alt="Logo JustStreamIt">
@@ -22,11 +23,11 @@
             <section id="meilleur-film">
                 <h2 class="section-title">Meilleur film</h2>
                 <article class="article-bordered">
-                    <img id="best-movie-poster" src="" alt="Affiche du meilleur film">
+                    <img id="best-movie-poster" src="../img/default-image.png" alt="Affiche du meilleur film">
                     <div class="best-movie-div">
                         <h3></h3>
                         <p></p>
-                        <button class="button-style button-best-movie" value="">Détails</button>
+                        <button class="button-style button-details button-best-movie" data-id="">Détails</button>
                     </div>
                 </article>
             </section>
@@ -44,7 +45,7 @@
                     <img src="" alt="">
                     <div>
                         <h3></h3>
-                        <button class="button-style button-details">
+                        <button class="button-style button-details button-article" data-id="">
                             Détails
                         </button>
                     </div>
@@ -68,7 +69,7 @@
                         <div id="modale-details">
                             <h2 id="modale-titre">Titre du film</h2>
                             <p>
-                                <span id="modale-date">1963</span>
+                                <span id="modale-date">Date de sortie</span>
                                 <span id="modale-genres">Genre1, Genre2</span>
                             </p>
                             <p>
@@ -81,20 +82,20 @@
                         </div>
                         <div>
                             <p>Réalisé par :</p>
-                            <p>Nom du réalisateur</p>
+                            <p id="modale-realisateur">Nom du réalisateur</p>
                         </div>
                     </div>
+                    <p id="modale-resume">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <div class="modale-div-affiche">
-                        <img class="modale-affiche" id="modale-affiche" src="https://picsum.photos/400/600" alt="Affiche du film">
+                        <img class="modale-affiche" id="modale-affiche" src="../img/default-image.png" alt="Affiche du film">
                     </div>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <p>Avec :</p>
-                <p>Acteur 1, Acteur 2, Acteur 3</p>
-                <button class="modale-fermer" id="modale-fermer">Fermer</button>
+                <p id="modale-actors">Acteur 1, Acteur 2, Acteur 3</p>
+                <button class="button-style modale-fermer" id="modale-fermer">Fermer</button>
+                <button class="button-style modale-fermer" id="modale-fermer-cross">X</button>
             </div>
         </dialog>
-        <a href="#modale-film" class="open-modal">Ouvrir la modale</a>
     </body>
 </html>

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", async function () {
+
     const best_movies_data = await get_movies(best_movies_url, 7);
-    const best_movie_data = await get_movie_details(best_movies_data.shift());
+    const best_movie_data = await get_movie_details(best_movies_data.shift().id);
+
     create_movie_section("main", "films-mieux-notes", "Films les mieux notés");
     display_best_movie(best_movie_data);
     display_movies("#films-mieux-notes .grid-movies", best_movies_data);
@@ -18,22 +20,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     create_category_select("autre-categorie");
     display_category_option("#select-categories", genres_list);
     
-    document.querySelectorAll('.button-see-more').forEach(button => {
-        const section = button.closest('section');
-        const articles = section.querySelectorAll('.grid-movies article');
-        let expanded = false;
-    
-        update_articles_display(button, articles, expanded);
-    
-        button.addEventListener('click', () => {
-            expanded = !expanded;
-            update_articles_display(button, articles, expanded);
-        });
-    
-        window.addEventListener('resize', () => {
-            if (!expanded) {
-                update_articles_display(button, articles, expanded);
-            }
-        });
-    });
+    document.querySelectorAll(".button-see-more").forEach(see_more_behaviour);
+    document.querySelectorAll(".button-details").forEach(details_behaviour);
+    document.querySelectorAll(".modale-fermer").forEach(close_modale_behaviour);
 });
