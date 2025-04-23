@@ -6,15 +6,15 @@ async function get_movies(url, movies_number) {
         movies_number = data.count;
     }
 
-    movies = add_movies(movies, data)
+    movies = add_movies(movies, data);
 
-    while(movies.length < movies_number) {
+    while (movies.length < movies_number) {
         data = await get_page(data.next);
-        movies = add_movies(movies, data)
+        movies = add_movies(movies, data);
     }
-    
+
     return movies.slice(0, movies_number);
-} 
+}
 
 function add_movies(movies, data) {
     for (let i = 0; i < data.results.length; i++) {
@@ -30,10 +30,10 @@ function add_movies(movies, data) {
 async function get_genres(url) {
     let genres = [];
     data = await get_page(url);
-    genres = add_genres(genres, data)
-    while(data.next) {
+    genres = add_genres(genres, data);
+    while (data.next) {
         data = await get_page(data.next);
-        genres = add_genres(genres, data)
+        genres = add_genres(genres, data);
     }
     return genres;
 }
@@ -50,12 +50,12 @@ function add_genres(genres, data) {
 
 function get_movie_details(id) {
     const movie_url = api_url + "titles/" + id;
-    return get_page(movie_url)
+    return get_page(movie_url);
 }
 
 function get_page(url) {
     return fetch(url)
-        .then(check_response_status)
+        .then(check_response_status);
 }
 
 function check_response_status(response) {

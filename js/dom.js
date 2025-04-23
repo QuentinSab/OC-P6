@@ -27,11 +27,17 @@ function create_movie_article(container, title, src, id) {
 function create_category_select(container_id) {
     const template = document.getElementById("select-category-template");
     const clone = template.content.cloneNode(true);
+    const select = clone.querySelector("select");
 
     const container = document.getElementById(container_id);
     const h2 = container.querySelector("h2");
 
-    container.insertBefore(clone, h2.nextSibling);
+    const header_div = document.createElement("div");
+    header_div.classList.add("section-header");
+
+    container.insertBefore(header_div, h2);
+    header_div.appendChild(h2);
+    header_div.appendChild(select);
 }
 
 function create_category_option(container, name) {
@@ -69,22 +75,22 @@ async function display_modale_details(button) {
     const movie = await get_movie_details(button.dataset.id);
 
     const champs = [
-        ["modale-titre", "title"],
-        ["modale-date", "date_published"],
-        ["modale-genres", "genres"],
-        ["modale-pegi", "rated"],
-        ["modale-duree", "duration"],
-        ["modale-pays", "countries"],
-        ["modale-score", "imdb_score"],
-        ["modale-boxoffice", "worldwide_gross_income"],
-        ["modale-realisateur", "directors"],
-        ["modale-resume", "long_description"],
-        ["modale-actors", "actors"]
+        ["modale-titre", movie.title],
+        ["modale-date", format_year(movie.date_published)],
+        ["modale-genres", format_list(movie.genres)],
+        ["modale-pegi", movie.rated + " - "],
+        ["modale-duree", movie.duration + " minutes"],
+        ["modale-pays", format_list_country(movie.countries)],
+        ["modale-score", movie.imdb_score + "/10"],
+        ["modale-boxoffice", format_boxoffice(movie.worldwide_gross_income)],
+        ["modale-realisateur", movie.directors],
+        ["modale-resume", movie.long_description],
+        ["modale-actors", format_list(movie.actors)]
     ];
 
     champs.forEach(([id, key]) => {
         const element = document.getElementById(id);
-        if (element) element.textContent = movie[key];
+        if (element) element.textContent = key;
     });
 
     const image = document.getElementById("modale-affiche");
@@ -94,5 +100,24 @@ async function display_modale_details(button) {
 
 function default_image_error(error) {
     error.target.onerror = null;
-    error.target.src = "../img/default-image.png";
+    error.target.src = "img/default-image.png";
+}
+
+function format_year(dateString) {
+    return dateString.slice(0, 4) + " - ";
+}
+function format_list(list) {
+    return list.join(", ");
+}
+
+function format_list_country(list) {
+    return "(" + list.join(" / ") + ")";
+}
+
+function format_boxoffice(value) {
+    if (typeof value !== "number" || isNaN(value)) {
+        return "Inconnues";
+    }
+
+    return "$" + (value / 1000000).toFixed(1) + "m";
 }
