@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustStreamIt</title>
+
+    <!-- Css file -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300" rel="stylesheet">
+
+    <!-- JavaScript files -->
     <script src="js/config.js"></script>
     <script src="js/api.js"></script>
     <script src="js/dom.js"></script>
@@ -15,37 +21,42 @@
 </head>
 
 <body>
+    <!-- Site banner -->
     <header>
         <img class="logo" src="img/logo_juststreamit.png" alt="Logo JustStreamIt">
         <h1 class="header-title">Vidéos à la demande</h1>
     </header>
 
     <main class="main">
+        <!-- Best movie section -->
         <section id="meilleur-film">
             <h2 class="section-title">Meilleur film</h2>
             <article class="article-bordered">
+                <!-- Dynamic image -->
                 <img id="best-movie-poster" src="img/default-image.png" alt="Affiche du meilleur film">
                 <div class="best-movie-div">
-                    <h3>Titre du meilleur film</h3>
-                    <p>Résumé</p>
+                    <h3>Titre du meilleur film</h3> <!-- Dynamic text -->
+                    <p>Résumé</p> <!-- Dynamic text -->
                     <button class="button-style button-details button-best-movie" data-id="">Détails</button>
                 </div>
             </article>
         </section>
 
+        <!-- Movies section template for dynamical generation -->
         <template id="section-movie-template">
             <section id="">
-                <h2 class="section-title"></h2>
+                <h2 class="section-title">Nom de la categorie</h2>
                 <div class="grid-movies"></div>
                 <button class="button-style button-see-more">Voir plus</button>
             </section>
         </template>
 
+        <!-- Movie article template for dynamical generation -->
         <template id="article-movie-template">
             <article>
                 <img src="" alt="">
                 <div>
-                    <h3></h3>
+                    <h3>Titre du film</h3>
                     <button class="button-style button-details button-article" data-id="">
                         Détails
                     </button>
@@ -53,40 +64,50 @@
             </article>
         </template>
 
+        <!-- Select template for dynamical generation -->
         <template id="select-category-template">
             <select class="select-categories" id="select-categories">
             </select>
         </template>
 
+        <!-- Category option template for dynamical generation -->
         <template id="option-category-template">
             <option value="" label=""></option>
         </template>
     </main>
 
+    <!-- Dynamic modal window for movie details -->
     <dialog class="modale-film" id="modale-film">
         <div class="modale-contenu">
             <div class="modale-header">
                 <div class="modale-header-text">
                     <div id="modale-details">
                         <h2 id="modale-titre">Titre du film</h2>
+
                         <p>
                             <span id="modale-date">Date de sortie</span>
                             <span id="modale-genres">Genres</span>
                         </p>
+
                         <p>
                             <span id="modale-pegi">Pegi</span>
                             <span id="modale-duree">Durée</span>
                             <span id="modale-pays">Pays</span>
                         </p>
+
                         <p>IMDB score : <span id="modale-score">IMDB score</span></p>
+
                         <p>Recettes au box-office : <span id="modale-boxoffice">Recettes</span></p>
                     </div>
+
                     <div>
                         <p class="modale-bold">Réalisé par :</p>
                         <p id="modale-realisateur">Réalisateur</p>
                     </div>
                 </div>
+
                 <p id="modale-resume">Résumé</p>
+
                 <div class="modale-div-affiche">
                     <img class="modale-affiche" id="modale-affiche" src="img/default-image.png" alt="Affiche du film">
                 </div>
